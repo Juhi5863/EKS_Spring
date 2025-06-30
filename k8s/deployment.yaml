@@ -1,28 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-demo
+  creationTimestamp: null
   labels:
-    app: spring-demo
+    app: spring-boot
+  name: spring-boot
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: spring-demo
+      app: spring-boot
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: spring-demo
+        app: spring-boot
     spec:
       containers:
-      - name: spring-demo
-        image: IMAGE_PLACEHOLDER
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+      - image: 408595458482.dkr.ecr.us-east-1.amazonaws.com/juhi
+        name: juhi
+        resources: {}
+status: {}
